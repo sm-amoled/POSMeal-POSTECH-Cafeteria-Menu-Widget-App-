@@ -7,6 +7,7 @@
 
 import ClockKit
 
+let suffixComplication = "Complication"
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
     
@@ -15,10 +16,10 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     func getComplicationDescriptors(handler: @escaping ([CLKComplicationDescriptor]) -> Void) {
         let descriptors = [
             CLKComplicationDescriptor(identifier: "complication", displayName: "포스밀", supportedFamilies: [
-                .circularSmall,
-                .graphicCorner,
+                .circularSmall, // Complication/Circular
+                .graphicCorner, // Complication/Graphic Corner
                 .modularSmall,
-                .graphicCircular
+                .graphicCircular //Complication/Graphic Circular
             ])
             // Multiple complication support can be added here with more descriptors
         ]
@@ -51,7 +52,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         switch complication.family {
             
         case .circularSmall:
-            let img: UIImage? = UIImage(named: "포스밀_글자_40.png")
+            let img: UIImage? = UIImage(named: "Complication/Circular")
             
             if let img = img {
                 handler(CLKComplicationTimelineEntry(date: Date(),
@@ -63,7 +64,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             return
             
         case .graphicCorner:
-            let img: UIImage? = UIImage(named: "포스밀_글자_40.png")
+            let img: UIImage? = UIImage(named: "Complication/Graphic Corner") // 작동함
            
             if let img = img {
                 handler(CLKComplicationTimelineEntry(date: Date(),
@@ -76,7 +77,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             return
             
         case .modularSmall:
-            let img: UIImage? = UIImage(named: "포스밀_글자_40.png")
+            let img: UIImage? = UIImage(named: "Complication/Graphic Circular")
             
             if let img = img {
                 handler(CLKComplicationTimelineEntry(date: Date(),
@@ -88,7 +89,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             return
             
         case .graphicCircular:
-            let img: UIImage? = UIImage(named: "포스밀_글자_40.png")
+            let img: UIImage? = UIImage(named: "Complication/Graphic Circular")
             
             if let img = img {
                 handler(CLKComplicationTimelineEntry(date: Date(),
@@ -118,7 +119,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         switch complication.family {
             
         case .circularSmall:
-            let img: UIImage? = UIImage(named: "포스밀_글자_40.png")
+            let img: UIImage? = UIImage(named: "Circular")
             
             if let img = img {
                 handler(CLKComplicationTemplateCircularSmallSimpleImage(imageProvider: CLKImageProvider(onePieceImage: img)))
@@ -129,7 +130,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             
         case .graphicCorner:
             
-            let img: UIImage? = UIImage(named: "포스밀_글자_40.png")
+            let img: UIImage? = UIImage(named: "Graphic Corner")
            
             if let img = img {
                 handler(CLKComplicationTemplateGraphicCornerCircularImage(imageProvider: CLKFullColorImageProvider(fullColorImage: img)))
@@ -140,7 +141,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             return
             
         case .modularSmall:
-            let img: UIImage? = UIImage(named: "포스밀_글자_40.png")
+            let img: UIImage? = UIImage(named: "Graphic Circular")
             
             if let img = img {
                 handler(CLKComplicationTemplateModularSmallSimpleImage(imageProvider: CLKImageProvider(onePieceImage: img)))
@@ -150,7 +151,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             return
             
         case .graphicCircular:
-            let img: UIImage? = UIImage(named: "포스밀_글자_40.png")
+            let img: UIImage? = UIImage(named: "Complication/Graphic Circular")
             
             if let img = img {
                 handler(CLKComplicationTemplateGraphicCircularImage(imageProvider: CLKFullColorImageProvider(fullColorImage: img)))
