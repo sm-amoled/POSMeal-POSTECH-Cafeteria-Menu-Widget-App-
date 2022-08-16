@@ -1,18 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "ft-36.png",
       "idiom" : "watch",
       "scale" : "2x"
     },
     {
-      "filename" : "ft-32.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : "<=145"
     },
     {
-      "filename" : "ft-40.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : ">183"
